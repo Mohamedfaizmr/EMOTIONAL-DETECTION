@@ -1,0 +1,218 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4bd2d0, #d9e2e5); /* Gradient background */
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* Container for the main content */
+.container {
+    background: rgba(76, 121, 120, 0.947); /* Semi-transparent dark background */
+    padding: 50px 70px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 800px;
+    overflow-y: auto;
+    position: relative;
+    min-height: 80vh; /* Ensure the container takes up most of the screen */
+}
+
+/* Level heading */
+.level-heading {
+    font-size: 40px;
+    color: #e9e7ee;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+/* Question container */
+.question-container {
+    background: #144543;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.question-container:hover {
+    background: #444;
+    transform: scale(1.02);
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.2);
+}
+
+.question-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e0f3f5;
+    margin-bottom: 10px;
+}
+
+/* Radio button options */
+.options-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    padding: 12px;
+    background: #555;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+label:hover {
+    background: #ffcc00;
+}
+
+/* Submit Button */
+button {
+    padding: 15px 40px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Error message */
+.error-popup {
+    background: rgba(255, 0, 0, 0.9);
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Buttons (Home & Start) */
+a.btn-home, a.btn-start {
+    padding: 15px 40px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a.btn-home:hover, a.btn-start:hover {
+    background: #0056b3;
+}
+
+/* Ensure the form and page content align properly */
+form {
+    margin-top: 30px;
+    text-align: center; /* Center the form inside the container */
+}
+
+/* Add padding to the form and overall page */
+.container {
+    padding-bottom: 100px; /* Add padding at the bottom for better spacing */
+}
+/* Navigation Buttons (Home & Start) */
+a.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #007bff; /* Button background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 22px; /* Text size */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.3s; /* Smooth transition for hover effect */
+    width: 100%;
+    max-width: 400px; /* Maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+a.btn:hover {
+    background: #0056b3; /* Darker background when hovering */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+/* Navigation Buttons (Home & Start) */
+a.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #007bff; /* Button background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline from link */
+    font-size: 22px; /* Text size */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all changes */
+    width: 100%;
+    max-width: 400px; /* Maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transform: scale(1); /* Set initial scale */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+a.btn:hover {
+    background: #0056b3; /* Darker background when hovering */
+    transform: scale(1.1); /* Slightly grow the button */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Bigger shadow on hover */
+}
+
+/* Animation Effect for the button */
+a.btn:active {
+    animation: pulse 0.3s ease-out; /* Pulse effect when clicked */
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.15); /* Slightly grow more */
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}

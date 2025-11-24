@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level {{ level }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="level-heading">Level {{ level }}</h1>
+        
+        {% if error %}
+            <div class="error-popup">{{ error }}</div>
+        {% endif %}
+        
+        <form method="POST">
+            {% for question in questions %}
+                <div class="question-container">
+                    <p class="question-text"><strong>{{ question }}</strong></p>
+                    <div class="options-container">
+                        <label>
+                            <input type="radio" name="q{{ loop.index }}" value="Yes" required> Yes
+                        </label>
+                        <label>
+                            <input type="radio" name="q{{ loop.index }}" value="No" required> No
+                        </label>
+                        <label>
+                            <input type="radio" name="q{{ loop.index }}" value="Don't Know" required> Don't Know
+                        </label>
+                    </div>
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+
+        <a class="btn-home" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+</body>
+</html>

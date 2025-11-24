@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Result: {{ result }}</h1>
+        <p>Thank you for completing the test!</p>
+        
+        <!-- Display result-specific message -->
+        {% if result == "Bad" %}
+            <p>Unfortunately, your results indicate some areas for improvement. Don't worry; you can always try again!</p>
+        {% else %}
+            <p>Great job! Your results indicate that you're on the right track!</p>
+        {% endif %}
+        
+        <a class="btn-home" href="{{ url_for('home') }}">Back to Home</a>
+        <a class="btn-start" href="{{ url_for('test', level=1) }}">Start Level 1 Again</a>
+    </div>
+</body>
+</html>
